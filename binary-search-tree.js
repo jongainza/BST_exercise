@@ -187,10 +187,8 @@ class BinarySearchTree {
         return node.left;
       } else {
         let successor = this.findMinNode(node.right);
-        node.val = successor.valnode.right = this.removeNode(
-          node.right,
-          successor.val
-        );
+        node.val = successor.val;
+        node.right = this.removeNode(node.right, successor.val);
       }
     }
     return node;
